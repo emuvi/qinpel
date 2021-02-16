@@ -1,7 +1,7 @@
 {
   "name": "qinpel",
-  "description": "Qinpel - Quick Interface for Pointel",
   "version": "0.1.0",
+  "description": "Qinpel - Quick Interface for Pointel",
   "private": true,
   "homepage": ".",
   "dependencies": {
@@ -20,6 +20,14 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "repository": "https://github.com/emuvi/qinpel",
+  "author": "Everton Murilo Vieira",
+  "keywords": [
+    "Qinpel",
+    "Quick",
+    "Interface",
+    "Pointel"
+  ],
   "eslintConfig": {
     "extends": [
       "react-app",
