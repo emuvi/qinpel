@@ -1,5 +1,6 @@
 {
   "name": "qinpel",
+  "description": "Qinpel - Quick Interface for Pointel",
   "version": "0.1.0",
   "private": true,
   "homepage": ".",
