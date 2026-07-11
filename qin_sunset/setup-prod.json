@@ -2,7 +2,7 @@
     "serverName": "QinSunset Prod",
     "serverLang": "pt-br",
     "serverHost": "0.0.0.0",
-    "serverPort": 5488,
+    "serverPort": 80,
     "servesPub": true,
     "servesApp": true,
     "servesDir": true,
