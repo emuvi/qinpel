@@ -3,6 +3,7 @@ import shutil
 
 qin_root = "../bin"
 os.system("mvn clean install")
+os.makedirs(f"{qin_root}/prod", exist_ok=True)
 shutil.copytree("./dist", f"{qin_root}/prod", dirs_exist_ok=True)
 shutil.copy("./setup-prod.json", f"{qin_root}/prod/setup.json")
 shutil.copy("./start.bat", f"{qin_root}/prod/start.bat")
