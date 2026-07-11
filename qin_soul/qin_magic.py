@@ -57,7 +57,3 @@ def get_folder_name() -> str:
 def download(origin: str, destiny: str):
     with urllib.request.urlopen(origin) as resp, open(destiny, 'wb') as file:
         shutil.copyfileobj(resp, file)
-
-
-if __name__ == "__main__":
-    automagic()
