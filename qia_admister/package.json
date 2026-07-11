@@ -1,0 +1,21 @@
+{
+  "name": "admister",
+  "displayName": "AdMister",
+  "description": "AdMister ( Administration Profession ) is a manager with all the common functionalities and the launcher of the user applications for the administration profession on the Qinpel platform.",
+  "keywords": [],
+  "repository": "https://github.com/emuvi/qia_admister",
+  "author": "Éverton M. Vieira",
+  "license": "LGPL-3.0-only",
+  "version": "0.1.0",
+  "main": "./build/all.js",
+  "types": "./types/all.d.ts",
+  "dependencies": {
+    "qin_case": "file:../qin_case",
+    "qin_soul": "file:../qin_soul"
+  },
+  "devDependencies": {
+    "typescript": "^4",
+    "webpack": "^4",
+    "webpack-cli": "^4"
+  }
+}

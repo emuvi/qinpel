@@ -1,0 +1,21 @@
+{
+  "name": "abdesk",
+  "displayName": "AbDesk",
+  "description": "AbDesk ( Abracadabra Desktop ) is a user interface for all the common functionalities available in the QinDesk on the Qinpel platform.",
+  "keywords": [],
+  "repository": "https://github.com/emuvi/qia_ab_desk",
+  "author": "Éverton M. Vieira",
+  "license": "LGPL-3.0-only",
+  "version": "0.1.0",
+  "main": "./build/index.js",
+  "types": "./types/index.d.ts",
+  "dependencies": {
+    "qin_case": "file:../qin_case",
+    "qin_soul": "file:../qin_soul"
+  },
+  "devDependencies": {
+    "typescript": "^4",
+    "webpack": "^4",
+    "webpack-cli": "^4"
+  }
+}

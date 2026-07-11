@@ -1,0 +1,35 @@
+@font-face {
+  font-family: SourceSansPro;
+  src: url("/pub/qin_desk/assets/source-sans-pro.ttf");
+}
+
+@font-face {
+  font-family: SourceSerifPro;
+  src: url("/pub/qin_desk/assets/source-serif-pro.ttf");
+}
+
+* {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  outline: none;
+  font-family: SourceSansPro;
+  font-size: 16px;
+}
+
+body {
+  color: #180027;
+  background-color: #f1f1f1;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 27px;
+}
+
+h3 {
+  font-size: 18px;
+}

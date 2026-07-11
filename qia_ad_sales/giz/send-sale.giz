@@ -1,0 +1,147 @@
+base = args[0]
+codigoPrePedido = args[1]
+
+import java.text.DecimalFormat
+
+numberFormat = new DecimalFormat('#0.000')
+
+def formatField(fieldValue) {
+    if (fieldValue != null) {
+        if (fieldValue instanceof BigDecimal) {
+            return numberFormat.format(fieldValue)
+        }
+        return fieldValue.toString()
+    }
+    return ''
+}
+
+def helped = giz.getHelp(base)
+
+def selectPrePedido = '''
+SELECT
+  p.emitido_data, p.cliente, clientes.nome, clientes.fantasia,
+  condicoes_pagamento.nome, p.cond_pagamento, p.obs, ' ' AS total_quantidade,
+  p.subtotal, COALESCE(p.out_desc, 0.0), COALESCE(p.out_acresc, 0.0), p.total,
+  p.representante, p.enviado
+FROM
+  prepedidos AS p
+JOIN pessoas AS clientes ON
+  clientes.codigo = p.cliente
+JOIN condicoes_pagamento ON
+  condicoes_pagamento.codigo = p.cond_pagamento
+WHERE
+  p.codigo = ?
+'''
+def resultPrePedido = helped.selectRow(selectPrePedido, codigoPrePedido)
+
+def dataPrePedido = [
+  emitido_data: formatField(resultPrePedido[0]),
+  cliente: formatField(resultPrePedido[1]),
+  clientes_nome: formatField(resultPrePedido[2]),
+  clientes_fantasia: formatField(resultPrePedido[3]),
+  condicoes_pagamento_nome: formatField(resultPrePedido[4]),
+  cond_pagamento: formatField(resultPrePedido[5]),
+  obs: formatField(resultPrePedido[6]),
+  total_quantidade: formatField(resultPrePedido[7]),
+  subtotal: formatField(resultPrePedido[8]),
+  out_desc: formatField(resultPrePedido[9]),
+  out_acresc: formatField(resultPrePedido[10]),
+  total: formatField(resultPrePedido[11]),
+  representante: formatField(resultPrePedido[12]),
+  enviado: formatField(resultPrePedido[13])
+]
+
+if (dataPrePedido.enviado == 'S') {
+    throw new Exception('This sales was already sent.')
+}
+
+def arquivo = StringBuilder.newInstance()
+arquivo << codigoPrePedido << '\n'
+arquivo << dataPrePedido.emitido_data << '\n'
+arquivo << dataPrePedido.cliente << '\n'
+arquivo << dataPrePedido.clientes_nome << '\n'
+arquivo << dataPrePedido.clientes_fantasia << '\n'
+arquivo << dataPrePedido.condicoes_pagamento_nome << '\n'
+arquivo << dataPrePedido.cond_pagamento << '\n'
+arquivo << dataPrePedido.obs << '\n'
+arquivo << dataPrePedido.total_quantidade << '\n'
+arquivo << dataPrePedido.subtotal << '\n'
+arquivo << dataPrePedido.out_desc << '\n'
+arquivo << dataPrePedido.out_acresc << '\n'
+arquivo << dataPrePedido.total << '\n'
+
+def selectMobVendedor = 'SELECT codigo FROM mobile_vendedores WHERE representante = ?'
+def mobVendedor = helped.selectOne(selectMobVendedor, dataPrePedido.representante)
+
+if (!mobVendedor) {
+    throw new Exception('User is NOT registered on mobile sales.')
+}
+
+def selectItens = '''
+SELECT
+  i.produto, produtos.nome, produtos.unidade,
+  i.quantidade, i.preco, i.desconto_per, i.desconto,
+  i.subtotal, i.total, i.obs
+FROM
+  itens_prepedidos AS i
+JOIN produtos ON
+  produtos.codigo = i.produto
+WHERE
+  i.prepedido = ?
+ORDER BY
+  i.codigo
+'''
+
+def resultItens = helped.select(selectItens, codigoPrePedido)
+
+if (!resultItens) {
+    throw new Exception('It is not allowed to send a sales without items.')
+}
+
+arquivo << '<Itens>' << '\n'
+
+for (item in resultItens) {
+    def dataItem = [
+    produto: formatField(item[0]).replace('-', '_'),
+    produtos_nome: formatField(item[1]).replace('-', '_'),
+    produtos_unidade: formatField(item[2]).replace('-', '_'),
+    quantidade: formatField(item[3]).replace('-', '_'),
+    preco: formatField(item[4]).replace('-', '_'),
+    desconto_per: formatField(item[5]).replace('-', '_'),
+    desconto: formatField(item[6]).replace('-', '_'),
+    subtotal: formatField(item[7]).replace('-', '_'),
+    total: formatField(item[8]).replace('-', '_'),
+    obs: formatField(item[9]).replace('-', '_')
+  ]
+
+    arquivo << dataItem.produto << '-'
+    arquivo << dataItem.produtos_nome << '-'
+    arquivo << dataItem.produtos_unidade << '-'
+    arquivo << dataItem.quantidade << '-'
+    arquivo << dataItem.preco << '-'
+    arquivo << dataItem.desconto_per << '-'
+    arquivo << dataItem.desconto << '-'
+    arquivo << dataItem.subtotal << '-'
+    arquivo << dataItem.total << '-'
+    arquivo << dataItem.obs << '\n'
+}
+
+arquivo << '</Itens>' << '\n'
+
+try {
+    helped.begin()
+
+    def insertMobArquivos = 'INSERT INTO mobile_arquivos (vendedor, nome, tipo, arquivo) VALUES (?, ?, ?, ?)'
+    helped.update(insertMobArquivos, mobVendedor, codigoPrePedido + '.ped', 'B', arquivo.toString())
+
+    def updatePrePedidos = "UPDATE prepedidos SET enviado = 'S', enviado_data = CURRENT_DATE, enviado_hora = CURRENT_TIME WHERE codigo = ?"
+    helped.update(updatePrePedidos, codigoPrePedido)
+
+    helped.commit()
+} catch (Exception e) {
+    helped.rollback()
+    throw e
+}
+
+print('Sale sent successfully!')
+return 0

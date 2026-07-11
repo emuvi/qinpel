@@ -1,0 +1,16 @@
+{
+    "serverName": "QinSunset Prod",
+    "serverLang": "pt-br",
+    "serverHost": "0.0.0.0",
+    "serverPort": 5488,
+    "servesPub": true,
+    "servesApp": true,
+    "servesDir": true,
+    "servesCmd": true,
+    "servesBas": true,
+    "servesReg": true,
+    "servesGiz": true,
+    "configMap": {
+        "ALWAYS_ORDER_BY_IF_HAS": "ordem,codigo DESC"
+    }
+}

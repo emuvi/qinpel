@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  qtest_ser_qin_sunset:
+    tty: true
+    stdin_open: true
+    container_name: qtest_qin_sunset
+    image: pointeldevs/run_java
+    volumes:
+      - ${QIN_ROOT}/Test:/root/Test
+      - ${QIN_ROOT}/Pool:/root/Pool
+    environment:
+      - QIN_ROOT=/root
+    ports:
+      - 5490:5490
+    expose:
+      - 5490
+    networks:
+      - qin_net_stk
+    restart: always
+    working_dir: /root/Test
+    command: ./start.sh
+
+networks:
+  qin_net_stk:
+    external: true

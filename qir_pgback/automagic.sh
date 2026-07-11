@@ -1,0 +1,1 @@
+py automagic.py

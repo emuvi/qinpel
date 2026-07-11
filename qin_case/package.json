@@ -1,0 +1,21 @@
+{
+  "name": "qin_case",
+  "displayName": "QinCase",
+  "description": "QinCase is the library for user applications with a wide set of graphical components available on Qinpel, the Quick Interface to Power Intelligence.",
+  "keywords": [],
+  "repository": "https://github.com/emuvi/qin_case",
+  "author": "Éverton M. Vieira",
+  "license": "LGPL-3.0-only",
+  "version": "0.1.0",
+  "main": "./build/all.js",
+  "types": "./types/all.d.ts",
+  "dependencies": {
+    "qin_soul": "file:../qin_soul"
+  },
+  "devDependencies": {
+    "qin_desk": "file:../qin_desk",
+    "typescript": "^4",
+    "webpack": "^4",
+    "webpack-cli": "^4"
+  }
+}

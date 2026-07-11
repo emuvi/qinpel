@@ -1,0 +1,5 @@
+{
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "qcode_ser_qia_adpeople",
+  "workspaceFolder": "/root/Code/qia_adpeople"
+}
