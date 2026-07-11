@@ -7,8 +7,8 @@ Qinpel (Quick Interface to Power Intelligence) is a comprehensive information pl
 This repository contains the following subprojects, which together build the Qinpel ecosystem and the Vidlus information platform:
 
 ### Core Systems
-* **[QinSunset](./qin_sunset)**: The backend of Qinpel and the base of the Vidlus information platform. It is a command program that serves public files, graphical user interfaces, file system access with authorization, command programs dispatchers and monitoring, databases queries, and scripts execution.
 * **[QinDesk](./qin_desk)**: The frontend of Qinpel. It acts as the manager of user applications for the Vidlus information platform.
+* **[QinSunset](./qin_sunset)**: The backend of Qinpel and the base of the Vidlus information platform. It is a command program that serves public files, graphical user interfaces, file system access with authorization, command programs dispatchers and monitoring, databases queries, and scripts execution.
 
 ### Applications & Interfaces
 * **[AbDesk](./qia_abdesk)**: (Abracadabra Desktop): A user interface for all the common functionalities available in QinDesk on the Qinpel platform.
