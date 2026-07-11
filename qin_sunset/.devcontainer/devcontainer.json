@@ -1,5 +1,0 @@
-{
-  "service": "qcode_ser_qin_sunset",
-  "dockerComposeFile": "docker-compose.yml",
-  "workspaceFolder": "/root/Code/qin_sunset"
-}

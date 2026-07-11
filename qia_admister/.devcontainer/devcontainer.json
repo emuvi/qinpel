@@ -1,5 +1,0 @@
-{
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "qcode_ser_qia_admister",
-  "workspaceFolder": "/root/Code/qia_admister"
-}
