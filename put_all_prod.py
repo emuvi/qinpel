@@ -5,7 +5,7 @@ import sys
 def main():
     root_dir = os.path.dirname(os.path.abspath(__file__))
     
-    for item in os.listdir(root_dir):
+    for item in sorted(os.listdir(root_dir), reverse=True):
         item_path = os.path.join(root_dir, item)
         if os.path.isdir(item_path):
             magic_file = os.path.join(item_path, "put_prod.py")
