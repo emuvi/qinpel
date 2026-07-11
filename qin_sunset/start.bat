@@ -1,1 +1,1 @@
-java -jar qin_sunset.jar
+jre\bin\java -jar qin_sunset.jar

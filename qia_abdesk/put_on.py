@@ -17,7 +17,7 @@ class Kind(Enum):
 
 
 def install(name: str, mode: Mode, kind: Kind):
-    qin_root = os.environ['QIN_ROOT']
+    qin_root = "../bin"
     destiny_root = f"{qin_root}/{'Prod' if mode == Mode.PROD else 'Test'}"
     builder.generate_and_build()
     packer.pack_browser("production" if mode == Mode.PROD else "development")

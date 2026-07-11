@@ -1,7 +1,7 @@
 import os
 import shutil
 
-qin_root = os.environ['QIN_ROOT']
+qin_root = "../bin"
 os.system("mvn clean install")
 shutil.copytree("./dist", f"{qin_root}/Prod", dirs_exist_ok=True)
 shutil.copy("./setup-prod.json", f"{qin_root}/Prod/setup.json")
