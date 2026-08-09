@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "QiaAdSales",
-            "url": "http://localhost:5490/pub/qin_desk/index.html",
+            "url": "http://localhost:8080/pub/qin_desk/index.html",
             "userDataDir": "${workspaceFolder}/.vscode/chrome_debug"
         }
     ]
