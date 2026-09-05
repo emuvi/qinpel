@@ -1,0 +1,7 @@
+.vscode/chrome_debug/
+node_modules/
+__pycache__/
+build/
+types/
+public/*.js
+*.log
