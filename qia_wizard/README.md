@@ -1,3 +1,3 @@
-# Scaffold
+# QiaWizard
 
-Scaffold is a the basic user interface project on the Qinpel platform.
+Qinpel Wizard to Develop new Applications.

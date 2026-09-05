@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "qir_apes"
+version = "0.1.0"
+description = "Qinpel Routines for Applications on Events of Specials"
+authors = ["Éverton M. Vieira <emuvi@outlook.com.br>"]
+license = "LGPL-3.0-only"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+psycopg2 = "^2.9.3"
+
+[tool.poetry.dev-dependencies]
+autopep8 = "^1.6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
