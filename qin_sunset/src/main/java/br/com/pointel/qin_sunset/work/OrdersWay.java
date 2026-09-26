@@ -12,8 +12,8 @@ import br.com.pointel.qin_sunset.core.Groups;
 import br.com.pointel.qin_sunset.core.Setup;
 import br.com.pointel.qin_sunset.core.Users;
 import br.com.pointel.qin_sunset.core.WayToRun;
-import com.vidlus.jarch.data.Bases;
-import com.vidlus.jarch.mage.WizThread;
+import br.com.pointel.wiz_jarch.data.Bases;
+import br.com.pointel.wiz_jarch.mage.WizThread;
 import jakarta.servlet.ServletException;
 
 public class OrdersWay {

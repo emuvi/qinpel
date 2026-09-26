@@ -8,7 +8,7 @@ import br.com.pointel.qin_sunset.core.Group;
 import br.com.pointel.qin_sunset.core.WayToRun;
 import br.com.pointel.qin_sunset.swap.Logged;
 import br.com.pointel.qin_sunset.swap.TryAuth;
-import com.vidlus.jarch.mage.WizString;
+import br.com.pointel.wiz_jarch.mage.WizString;
 import jakarta.servlet.http.HttpServletRequest;
 
 public class Runner {

@@ -9,7 +9,7 @@ import br.com.pointel.qin_sunset.core.IssuedWriter;
 import br.com.pointel.qin_sunset.core.WayToRun;
 import br.com.pointel.qin_sunset.core.IssuedWriter.Destiny;
 import br.com.pointel.qin_sunset.swap.Execute;
-import com.vidlus.jarch.flow.Pace;
+import br.com.pointel.wiz_jarch.flow.Pace;
 
 public class OrdersGiz {
 

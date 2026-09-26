@@ -1,6 +1,6 @@
 package br.com.pointel.qin_sunset.core;
 
-import com.vidlus.jarch.data.Data;
+import br.com.pointel.wiz_jarch.data.Data;
 
 public class AllowBas implements Data {
 

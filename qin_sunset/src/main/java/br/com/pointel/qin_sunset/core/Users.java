@@ -3,8 +3,8 @@ package br.com.pointel.qin_sunset.core;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vidlus.jarch.data.Data;
-import com.vidlus.jarch.data.DataListArray;
+import br.com.pointel.wiz_jarch.data.Data;
+import br.com.pointel.wiz_jarch.data.DataListArray;
 
 public class Users extends DataListArray<User> {
 

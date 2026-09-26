@@ -2,7 +2,7 @@ package br.com.pointel.qin_sunset.swap;
 
 import com.google.gson.Gson;
 
-import com.vidlus.jarch.data.Data;
+import br.com.pointel.wiz_jarch.data.Data;
 
 public class PathRead implements Data {
 

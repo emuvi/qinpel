@@ -2,8 +2,9 @@ package br.com.pointel.qin_sunset.core;
 
 import java.util.Objects;
 import com.google.gson.Gson;
-import com.vidlus.jarch.data.Strain;
-import com.vidlus.jarch.flow.FixVals;
+
+import br.com.pointel.wiz_jarch.data.Strain;
+import br.com.pointel.wiz_jarch.flow.FixVals;
 
 public class AllowedReg implements FixVals {
 

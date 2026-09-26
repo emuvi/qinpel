@@ -3,7 +3,7 @@ package br.com.pointel.qin_sunset.core;
 import java.io.File;
 import java.util.Objects;
 
-import com.vidlus.jarch.data.Data;
+import br.com.pointel.wiz_jarch.data.Data;
 
 public class Allow implements Data {
 

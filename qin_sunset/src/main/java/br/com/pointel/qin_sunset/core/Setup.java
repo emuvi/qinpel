@@ -5,12 +5,12 @@ import java.util.Map;
 
 import com.google.gson.Gson;
 
-import com.vidlus.jarch.data.Data;
-import com.vidlus.jarch.flow.FixBool;
-import com.vidlus.jarch.flow.FixChars;
-import com.vidlus.jarch.flow.FixInt;
-import com.vidlus.jarch.flow.FixLong;
-import com.vidlus.jarch.flow.FixObject;
+import br.com.pointel.wiz_jarch.data.Data;
+import br.com.pointel.wiz_jarch.flow.FixBool;
+import br.com.pointel.wiz_jarch.flow.FixChars;
+import br.com.pointel.wiz_jarch.flow.FixInt;
+import br.com.pointel.wiz_jarch.flow.FixLong;
+import br.com.pointel.wiz_jarch.flow.FixObject;
 
 public class Setup implements Data {
     

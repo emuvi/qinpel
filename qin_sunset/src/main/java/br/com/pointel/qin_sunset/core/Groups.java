@@ -1,7 +1,7 @@
 package br.com.pointel.qin_sunset.core;
 
-import com.vidlus.jarch.data.Data;
-import com.vidlus.jarch.data.DataListArray;
+import br.com.pointel.wiz_jarch.data.Data;
+import br.com.pointel.wiz_jarch.data.DataListArray;
 
 public class Groups extends DataListArray<Group> {
     

@@ -6,16 +6,16 @@ import java.util.Objects;
 import br.com.pointel.qin_sunset.core.AllowReg;
 import br.com.pointel.qin_sunset.core.Authed;
 import br.com.pointel.qin_sunset.core.WayToRun;
-import com.vidlus.jarch.data.Heads;
-import com.vidlus.jarch.data.Registry;
-import com.vidlus.jarch.data.Strain;
-import com.vidlus.jarch.data.Table;
-import com.vidlus.jarch.data.ToDelete;
-import com.vidlus.jarch.data.ToInsert;
-import com.vidlus.jarch.data.ToSelect;
-import com.vidlus.jarch.data.ToUpdate;
-import com.vidlus.jarch.flow.CSVMaker;
-import com.vidlus.jarch.flow.CSVWrite;
+import br.com.pointel.wiz_jarch.data.Heads;
+import br.com.pointel.wiz_jarch.data.Registry;
+import br.com.pointel.wiz_jarch.data.Strain;
+import br.com.pointel.wiz_jarch.data.Table;
+import br.com.pointel.wiz_jarch.data.ToDelete;
+import br.com.pointel.wiz_jarch.data.ToInsert;
+import br.com.pointel.wiz_jarch.data.ToSelect;
+import br.com.pointel.wiz_jarch.data.ToUpdate;
+import br.com.pointel.wiz_jarch.flow.CSVMaker;
+import br.com.pointel.wiz_jarch.flow.CSVWrite;
 import jakarta.servlet.ServletException;
 
 public class OrdersReg {

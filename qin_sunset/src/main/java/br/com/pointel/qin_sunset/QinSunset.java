@@ -17,7 +17,7 @@ import br.com.pointel.qin_sunset.core.Setup;
 import br.com.pointel.qin_sunset.core.Users;
 import br.com.pointel.qin_sunset.core.WayToRun;
 import br.com.pointel.qin_sunset.work.OrdersWay;
-import com.vidlus.jarch.data.Bases;
+import br.com.pointel.wiz_jarch.data.Bases;
 
 public class QinSunset {
 

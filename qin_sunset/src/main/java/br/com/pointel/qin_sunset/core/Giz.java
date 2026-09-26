@@ -1,7 +1,7 @@
 package br.com.pointel.qin_sunset.core;
 
-import com.vidlus.jarch.data.EOrm;
-import com.vidlus.jarch.data.ESql;
+import br.com.pointel.wiz_jarch.data.EOrm;
+import br.com.pointel.wiz_jarch.data.ESql;
 
 public class Giz {
 

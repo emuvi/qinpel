@@ -1,7 +1,7 @@
 package br.com.pointel.qin_sunset.core;
 
-import com.vidlus.jarch.data.Bases;
-import com.vidlus.jarch.data.Storage;
+import br.com.pointel.wiz_jarch.data.Bases;
+import br.com.pointel.wiz_jarch.data.Storage;
 
 public class WayToRun {
 

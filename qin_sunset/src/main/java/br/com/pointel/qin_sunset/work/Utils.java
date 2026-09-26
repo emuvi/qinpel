@@ -6,7 +6,8 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
-import com.vidlus.jarch.mage.WizArray;
+
+import br.com.pointel.wiz_jarch.mage.WizArray;
 
 public class Utils {
     public static String newRandomToken() {

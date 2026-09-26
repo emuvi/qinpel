@@ -7,10 +7,10 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vidlus.jarch.data.Data;
-import com.vidlus.jarch.data.DataListArray;
-import com.vidlus.jarch.flow.FixBool;
-import com.vidlus.jarch.flow.FixObject;
+import br.com.pointel.wiz_jarch.data.Data;
+import br.com.pointel.wiz_jarch.data.DataListArray;
+import br.com.pointel.wiz_jarch.flow.FixBool;
+import br.com.pointel.wiz_jarch.flow.FixObject;
 
 public class Group implements Data {
 

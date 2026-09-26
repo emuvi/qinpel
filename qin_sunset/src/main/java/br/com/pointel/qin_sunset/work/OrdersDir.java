@@ -16,7 +16,7 @@ import br.com.pointel.qin_sunset.swap.PathKindName;
 import br.com.pointel.qin_sunset.swap.PathList;
 import br.com.pointel.qin_sunset.swap.Transfer;
 import br.com.pointel.qin_sunset.swap.Where;
-import com.vidlus.jarch.data.DataListArray;
+import br.com.pointel.wiz_jarch.data.DataListArray;
 
 public class OrdersDir {
 

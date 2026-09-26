@@ -3,8 +3,9 @@ package br.com.pointel.qin_sunset.core;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import com.vidlus.jarch.data.Deeds;
-import com.vidlus.jarch.data.Registry;
+
+import br.com.pointel.wiz_jarch.data.Deeds;
+import br.com.pointel.wiz_jarch.data.Registry;
 
 public class Authed {
 

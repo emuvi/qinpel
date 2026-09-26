@@ -1,7 +1,8 @@
 package br.com.pointel.qin_sunset.core;
 
 import java.io.File;
-import com.vidlus.jarch.data.Bases;
+
+import br.com.pointel.wiz_jarch.data.Bases;
 
 public class AirWays {
 
