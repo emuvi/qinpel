@@ -4,119 +4,119 @@ import { AdModule } from "./ad-tools";
 export class AdModules {
 
     static BUSINESS: AdModule = {
-        appName: "adpeople",
+        appName: "admister",
         title: "Negócios",
         icon: QinAsset.FaceBusiness,
         tableHead: { name: "negocios" },
     };
 
     static REGION: AdModule = {
-        appName: "adpeople",
+        appName: "admister",
         title: "Região",
         icon: QinAsset.FaceRegion,
         tableHead: { name: "regioes" },
     };
 
     static NATION: AdModule = {
-        appName: "adpeople",
+        appName: "admister",
         title: "Países",
         icon: QinAsset.FaceGlobe,
         tableHead: { name: "paises" },
     };
 
     static STATE: AdModule = {
-        appName: "adpeople",
+        appName: "admister",
         title: "Estados",
         icon: QinAsset.FaceState,
         tableHead: { name: "estados" },
     };
 
     static CITY: AdModule = {
-        appName: "adpeople",
+        appName: "admister",
         title: "Cidades",
         icon: QinAsset.FaceCity,
         tableHead: { name: "cidades" },
     };
 
     static DISTRICT: AdModule = {
-        appName: "adpeople",
+        appName: "admister",
         title: "Bairros",
         icon: QinAsset.FaceDistrict,
         tableHead: { name: "bairros" },
     };
 
     static PEOPLE: AdModule = {
-        appName: "adpeople",
+        appName: "admister",
         title: "Pessoas",
         icon: QinAsset.FacePeople,
         tableHead: { name: "pessoas" },
     };
 
     static PEOPLE_GROUP: AdModule = {
-        appName: "adpeople",
+        appName: "admister",
         title: "Grupos de Pessoas",
         icon: QinAsset.FacePeopleGroup,
         tableHead: { name: "grupos_pessoas" },
     };
 
     static PEOPLE_SUBGROUP: AdModule = {
-        appName: "adpeople",
+        appName: "admister",
         title: "SubGrupos de Pessoas",
         icon: QinAsset.FacePeopleSubgroup,
         tableHead: { name: "subgrupos_pessoas" },
     };
 
     static CLIENTS: AdModule = {
-        appName: "adsales",
+        appName: "admister",
         title: "Clientes",
         icon: QinAsset.FaceCostumer,
         tableHead: { name: "pessoas" },
     };
 
     static PRODUCTS: AdModule = {
-        appName: "adsales",
+        appName: "admister",
         title: "Produtos",
         icon: QinAsset.FaceProduct,
         tableHead: { name: "produtos" },
     };
 
     static PRODUCTS_GROUP: AdModule = {
-        appName: "adsales",
+        appName: "admister",
         title: "Grupos de Produtos",
         icon: QinAsset.FaceProductGroup,
         tableHead: { name: "grupos_produtos" },
     };
 
     static PRODUCTS_SUBGROUP: AdModule = {
-        appName: "adsales",
+        appName: "admister",
         title: "SubGrupos de Produtos",
         icon: QinAsset.FaceProductSubgroup,
         tableHead: { name: "subgrupos_produtos" },
     };
 
     static PRICES: AdModule = {
-        appName: "adsales",
+        appName: "admister",
         title: "Preços",
         icon: QinAsset.FacePrices,
         tableHead: { name: "precos" },
     };
 
     static PAYMENT_TERMS: AdModule = {
-        appName: "adsales",
+        appName: "admister",
         title: "Condições de Pagamento",
         icon: QinAsset.FaceCheckbook,
         tableHead: { name: "condicoes_pagamento" },
     };
 
     static SALES: AdModule = {
-        appName: "adsales",
+        appName: "admister",
         title: "Vendas",
         icon: QinAsset.FaceSales,
         tableHead: { name: "prepedidos" },
     };
 
     static SALES_ITEMS: AdModule = {
-        appName: "adsales",
+        appName: "admister",
         title: "Vendas Itens",
         icon: QinAsset.FaceSalesItems,
         tableHead: { name: "itens_prepedidos" },

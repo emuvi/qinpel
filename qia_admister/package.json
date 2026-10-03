@@ -1,7 +1,7 @@
 {
   "name": "admister",
   "displayName": "AdMister",
-  "description": "AdMister ( Administration Profession ) is a manager with all the common functionalities and the launcher of the user applications for the administration profession on the Qinpel platform.",
+  "description": "AdMister ( Administration Profession ) is a manager with all the common functionalities and the launcher of the user applications for the administration profession on the Qinpel platform. It includes the tools of information on people and sales that a company may need.",
   "keywords": [],
   "repository": "https://github.com/emuvi/qia_admister",
   "author": "Éverton M. Vieira",
