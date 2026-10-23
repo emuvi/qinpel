@@ -17,8 +17,8 @@ class Kind(Enum):
 
 
 def install(name: str, mode: Mode, kind: Kind):
-    qin_root = os.environ['QIN_ROOT']
-    destiny_root = f"{qin_root}/{'Prod' if mode == Mode.PROD else 'Test'}"
+    qin_root = "../bin"
+    destiny_root = f"{qin_root}/{'prod' if mode == Mode.PROD else 'test'}"
     builder.generate_and_build()
     packer.pack_browser("production" if mode == Mode.PROD else "development")
     print("Publishing...")
@@ -26,6 +26,7 @@ def install(name: str, mode: Mode, kind: Kind):
         destiny = f"{destiny_root}/{'pub' if kind == Kind.PUB else 'app'}/{name}"
         if os.path.isdir(destiny):
             shutil.rmtree(destiny)
+        os.makedirs(os.path.dirname(destiny), exist_ok=True)
         shutil.copytree("./public", destiny)
         print(f"Published public folder to {destiny}")
     else:
@@ -34,6 +35,7 @@ def install(name: str, mode: Mode, kind: Kind):
         destiny = f"{destiny_root}/giz/{name}"
         if os.path.isdir(destiny):
             shutil.rmtree(destiny)
+        os.makedirs(os.path.dirname(destiny), exist_ok=True)
         shutil.copytree("./giz", destiny)
         print(f"Published giz folder to {destiny}")
     else:

@@ -12,11 +12,11 @@ def automagic():
 
 def app_automagic():
     print("Configuring an application...")
-    download("https://github.com/emuvi/qin_soul/raw/refs/heads/master/builder.py", "builder.py")
-    download("https://github.com/emuvi/qin_soul/raw/refs/heads/master/cleaner.py", "cleaner.py")
-    download("https://github.com/emuvi/qin_soul/raw/refs/heads/master/mk_all.py", "mk_all.py")
-    download("https://github.com/emuvi/qin_soul/raw/refs/heads/master/packer.py", "packer.py")
-    download("https://github.com/emuvi/qin_soul/raw/refs/heads/master/put_on.py", "put_on.py")
+    shutil.copy("../qin_soul/builder.py", "builder.py")
+    shutil.copy("../qin_soul/cleaner.py", "cleaner.py")
+    shutil.copy("../qin_soul/mk_all.py", "mk_all.py")
+    shutil.copy("../qin_soul/packer.py", "packer.py")
+    shutil.copy("../qin_soul/put_on.py", "put_on.py")
     app_name = get_app_name()
     app_mk_put_mode(app_name, 'TEST')
     app_mk_put_mode(app_name, 'PROD')
