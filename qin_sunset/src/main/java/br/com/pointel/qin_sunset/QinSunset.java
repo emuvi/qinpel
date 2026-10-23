@@ -39,6 +39,8 @@ public class QinSunset {
         } else {
             setup = new Setup();
         }
+        setup.fixNullsAndEnvs();
+        setup.redirectMap.put("/", "/pub/qin_desk/index.html");
         setFromCmd(command, setup);
         Bases bases;
         var basesFile = new File("bases.json");

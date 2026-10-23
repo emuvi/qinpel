@@ -3,8 +3,6 @@ package br.com.pointel.qin_sunset.core;
 import java.io.File;
 import java.util.Map;
 
-import com.google.gson.Gson;
-
 import br.com.pointel.wiz_jarch.data.Data;
 import br.com.pointel.wiz_jarch.flow.FixBool;
 import br.com.pointel.wiz_jarch.flow.FixChars;
