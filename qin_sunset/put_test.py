@@ -1,7 +1,7 @@
 import os
 import shutil
 
-qin_root = "../bin"
+qin_root = "../dist"
 os.system("mvn clean install")
 os.makedirs(f"{qin_root}/test", exist_ok=True)
 shutil.copytree("./dist", f"{qin_root}/test", dirs_exist_ok=True)
