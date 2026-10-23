@@ -561,7 +561,7 @@ export class AdRegister extends QinColumn {
     public tryTurnNotice(): Promise<AdRegTurningNotice> {
         return new Promise<AdRegTurningNotice>((resolve, reject) => {
             if (!this.isRowSelectedValid()) {
-                reject({ why: "There's no valid row selected to notice." });
+                reject({ message: "There's no valid row selected to notice.", origin: "{qia_admister}(ErrCode-000023)" });
                 return;
             }
             this.tryTurnMode(AdRegMode.NOTICE)
@@ -620,7 +620,7 @@ export class AdRegister extends QinColumn {
     public tryTurnMutate(): Promise<AdRegTurningMutate> {
         return new Promise<AdRegTurningMutate>((resolve, reject) => {
             if (!this.isRowSelectedValid()) {
-                reject({ why: "There's no valid row selected to mutate." });
+                reject({ message: "There's no valid row selected to mutate.", origin: "{qia_admister}(ErrCode-000024)" });
                 return;
             }
             this.tryTurnMode(AdRegMode.MUTATE)
@@ -709,7 +709,7 @@ export class AdRegister extends QinColumn {
                     .then((res) => resolve(res))
                     .catch((err) => reject(err));
             } else {
-                reject({ why: "There's no selected register to refresh." });
+                reject({ message: "There's no selected register to refresh.", origin: "{qia_admister}(ErrCode-000025)" });
             }
         });
     }
@@ -734,7 +734,7 @@ export class AdRegister extends QinColumn {
                     .then((res) => resolve(res))
                     .catch((err) => reject(err));
             } else {
-                reject({ why: "Can not move the selected row" });
+                reject({ message: "Can not move the selected row", origin: "{qia_admister}(ErrCode-000026)" });
             }
         });
     }
@@ -749,7 +749,7 @@ export class AdRegister extends QinColumn {
                     .then((res) => resolve(res))
                     .catch((err) => reject(err));
             } else {
-                reject({ why: "Can not move the selected row" });
+                reject({ message: "Can not move the selected row", origin: "{qia_admister}(ErrCode-000027)" });
             }
         });
     }
@@ -764,7 +764,7 @@ export class AdRegister extends QinColumn {
                     .then((res) => resolve(res))
                     .catch((err) => reject(err));
             } else {
-                reject({ why: "Can not move the selected row" });
+                reject({ message: "Can not move the selected row", origin: "{qia_admister}(ErrCode-000028)" });
             }
         });
     }
@@ -778,7 +778,7 @@ export class AdRegister extends QinColumn {
                     .then((res) => resolve(res))
                     .catch((err) => reject(err));
             } else {
-                reject({ why: "Can not move the selected row" });
+                reject({ message: "Can not move the selected row", origin: "{qia_admister}(ErrCode-000029)" });
             }
         });
     }
@@ -873,7 +873,7 @@ export class AdRegister extends QinColumn {
     public tryDelete(): Promise<AdRegTurningDelete> {
         return new Promise<AdRegTurningDelete>((resolve, reject) => {
             if (!this.hasRowSelected()) {
-                reject({ why: "No selected row to delete" });
+                reject({ message: "No selected row to delete", origin: "{qia_admister}(ErrCode-000022)" });
                 return;
             }
             this.qinpel.frame

@@ -9,7 +9,7 @@ import { AdUpdate } from "./ad-update";
 export class AdRegModel {
     private _reg: AdRegister;
     private _fieldList: AdField[] = [];
-    private _typedList: Typed[] = null;
+    private _typedList: Typed[] | null = null;
 
     public constructor(register: AdRegister) {
         this._reg = register;
@@ -33,7 +33,7 @@ export class AdRegModel {
         this._fieldList.push(field);
     }
 
-    public getFieldByName(name: string): AdField {
+    public getFieldByName(name: string): AdField | null {
         for (let field of this._fieldList) {
             if (field.name === name) {
                 return field;
@@ -42,13 +42,13 @@ export class AdRegModel {
         return null;
     }
 
-    public getFieldIndexByName(name: string): number {
+    public getFieldIndexByName(name: string): number | null {
         for (let i = 0; i < this._fieldList.length; i++) {
             if (this._fieldList[i].name === name) {
                 return i;
             }
         }
-        return -1;
+        return null;
     }
 
     public setValue(index: number, value: any) {
@@ -96,12 +96,9 @@ export class AdRegModel {
     }
 
     public hasMutations(): string[] {
-        let result: Array<string> = null;
+        let result: Array<string> = [];
         for (let field of this._fieldList) {
             if (field.hasMutations()) {
-                if (result == null) {
-                    result = [];
-                }
                 result.push(field.title);
             }
         }
@@ -118,10 +115,8 @@ export class AdRegModel {
         return new Promise<AdRegKeys>((resolve, reject) => {
             let valuedList = new Array<Valued>();
             let regKeyList = new Array<Valued>();
-            let toGetID: ToGetID = {
-                name: null,
-                filter: null
-            };
+            let toGetIDName = null;
+            let toGetIDFilter = null;
             for (let field of this._fieldList) {
                 let valued = field.valued;
                 if (valued.name.indexOf(".") === -1) {
@@ -131,13 +126,21 @@ export class AdRegModel {
                     if (field.key) {
                         regKeyList.push(valued);
                         if (!valued.data) {
-                            toGetID.name = field.name;
+                            toGetIDName = field.name;
                         } else {
-                            toGetID.filter = valued;
+                            toGetIDFilter = valued;
                         }
                     }
                 }
             }
+            if (toGetIDName == null || toGetIDFilter == null) {
+                reject({ message: "Could not determine the ID field or filter to insert.", origin: "{qia_admister}(ErrCode-000020)" });
+                return;
+            }
+            let toGetID: ToGetID = {
+                name: toGetIDName,
+                filter: toGetIDFilter,
+            };
             let query: AdInsert = {
                 registry: this._reg.registry,
                 valuedList,
@@ -187,6 +190,10 @@ export class AdRegModel {
         return new Promise<void>((resolve, reject) => {
             let detailsPromise = new Array<Promise<number>>();
             for (const detail of this._reg.details) {
+                if (detail.setup.module.tableHead == null) {
+                    reject({ message: "The detail must have a table head on its setup module.", origin: "{qia_admister}(ErrCode-000021)"});
+                    return;
+                }
                 let registry: Registry = {
                     base: this._reg.registry.base,
                     tableHead: detail.setup.module.tableHead,
@@ -199,6 +206,10 @@ export class AdRegModel {
                     for (const filter of detail.setup.filterList) {
                         if (filter.linked) {
                             let indexField = this._reg.model.getFieldIndexByName(filter.linked.upon);
+                            if (indexField == null || this._reg.selectedValues == null) {
+                                reject({ message: "Could not define the filter to delete de detail registers.", origin: "{qia_admister}(ErrCode-000031)" });
+                                return;
+                            }
                             let fixedValue = this._reg.selectedValues[indexField];
                             deleteDetail.filterList.push({
                                 seems: FilterSeems.Is,

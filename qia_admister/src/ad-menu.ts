@@ -73,7 +73,7 @@ export function adMenuStartUp(menuItemList: AdMenuItem[]): QinBase {
                 if (menuItem.action) {
                     return new menuItem.action(menuItem.module, expect);
                 } else {
-                    throw new Error("No menu action defined");
+                    throw { message: "No menu action defined", origin: "{qia_admister}(ErrCode-000030)" };
                 }
             }
         }
