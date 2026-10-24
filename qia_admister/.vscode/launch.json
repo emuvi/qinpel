@@ -7,8 +7,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "QiaAdMister",
-            "url": "http://localhost:8080/pub/qin_desk/index.html",
+            "name": "AdMister",
+            "url": "http://localhost:8080/",
             "userDataDir": "${workspaceFolder}/.vscode/chrome_debug",
             "sourceMapPathOverrides": {
                 "webpack:///./build/dics/*": "${workspaceFolder}/../qin_desk/build/dics/*",

@@ -8,8 +8,21 @@
             "type": "chrome",
             "request": "launch",
             "name": "QinCase",
-            "url": "http://localhost:8080/pub/qin_desk/index.html",
-            "userDataDir": "${workspaceFolder}/.vscode/chrome_debug"
+            "url": "http://localhost:8080/",
+            "userDataDir": "${workspaceFolder}/.vscode/chrome_debug",
+            "sourceMapPathOverrides": {
+                "webpack:///./build/dics/*": "${workspaceFolder}/../qin_desk/build/dics/*",
+                "webpack:///./build/qin*": "${workspaceFolder}/../qin_desk/build/qin*",
+                "webpack:///./build/desk.js": "${workspaceFolder}/../qin_desk/build/desk.js",
+                "webpack:///./build/index.js": "${workspaceFolder}/../qin_desk/build/index.js",
+                "webpack:///./build/login.js": "${workspaceFolder}/../qin_desk/build/login.js",
+                "webpack:///./build/main.js": "${workspaceFolder}/../qin_desk/build/main.js",
+                "webpack:///./~/*": "${webRoot}/node_modules/*",
+                "webpack:////*": "/*",
+                "webpack://@?:*/?:*/*": "${webRoot}/*",
+                "webpack://?:*/*": "${webRoot}/*",
+                "webpack:///([a-z]):/(.+)": "$1:/$2"
+            }
         }
     ]
 }
