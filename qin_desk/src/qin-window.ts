@@ -30,7 +30,7 @@ export class QinWindow {
 
     private initBody() {
         this._divBody.className = "QinpelWindowBody";
-        this._divBody.style.backgroundImage = "url('./assets/background-normal.png')";
+        this._divBody.style.backgroundImage = "url('./assets/background.png')";
         this._divBody.style.backgroundAttachment = "local";
         this._divBody.style.fontWeight = "bold";
         this._divBody.style.fontSize = "12px";
