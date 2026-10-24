@@ -35,6 +35,8 @@ export class QinFrame {
     private _maximized = false;
     private _lastWidth = -1;
     private _lastHeight = -1;
+    private _lastDisplayBody = "initial";
+    private _lastDisplayFoot = "flex";
 
     private _wasClosed = false;
 
@@ -130,12 +132,12 @@ export class QinFrame {
         this._imgMinimize.src = "./assets/frame-minimize.png";
         styles.applyOnDivEdgeIcon(this._imgMinimize);
         this._imgMinimize.alt = "-";
-        QinArms.addActionMain(this._imgMinimize, () => this.minimize());
+        QinArms.addActionMain(this._imgMinimize, () => this.toggleMinimized());
         this._divHead.appendChild(this._imgMinimize);
         this._imgMaximize.src = "./assets/frame-maximize.png";
         styles.applyOnDivEdgeIcon(this._imgMaximize);
         this._imgMaximize.alt = "+";
-        QinArms.addActionMain(this._imgMaximize, () => this.maximize());
+        QinArms.addActionMain(this._imgMaximize, () => this.toggleMaximized());
         this._divHead.appendChild(this._imgMaximize);
         this._imgClose.src = "./assets/frame-close.png";
         styles.applyOnDivEdgeIcon(this._imgClose);
@@ -403,19 +405,21 @@ export class QinFrame {
         this._qinWindow.showMenu();
     }
 
-    public minimize() {
+    public toggleMinimized() {
         if (this._minimized) {
             this._divFrame.style.width = this._lastWidth + "px";
             this._divFrame.style.height = this._lastHeight + "px";
-            this._iframeBody.style.display = "initial";
-            this._divFoot.style.display = "initial";
+            this._iframeBody.style.display = this._lastDisplayBody;
+            this._divFoot.style.display = this._lastDisplayFoot;
             this._minimized = false;
         } else {
             if (this._maximized) {
-                this.maximize();
+                this.toggleMaximized();
             }
             this._lastWidth = parseInt(this._divFrame.style.width, 10);
             this._lastHeight = parseInt(this._divFrame.style.height, 10);
+            this._lastDisplayBody = this._iframeBody.style.display;
+            this._lastDisplayFoot = this._divFoot.style.display;
             this._iframeBody.style.display = "none";
             this._divFoot.style.display = "none";
             this._divFrame.style.width = FrameSetup.MINIMIZED_WIDTH + "px";
@@ -425,14 +429,14 @@ export class QinFrame {
         this._qinWindow.showElement(this._divFrame);
     }
 
-    public maximize() {
+    public toggleMaximized() {
         if (this._maximized) {
             this._divFrame.style.width = this._lastWidth + "px";
             this._divFrame.style.height = this._lastHeight + "px";
             this._maximized = false;
         } else {
             if (this._minimized) {
-                this.minimize();
+                this.toggleMinimized();
             }
             this._lastWidth = parseInt(this._divFrame.style.width, 10);
             this._lastHeight = parseInt(this._divFrame.style.height, 10);
