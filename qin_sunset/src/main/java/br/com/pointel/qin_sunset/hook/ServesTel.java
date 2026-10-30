@@ -22,9 +22,17 @@ public class ServesTel {
     private ServesTel() {}
 
     public static void init(ServletContextHandler context) throws SQLException {
+        initDatabase();
+        initPing(context);
+        initLive(context);
+    }
+
+    private static void initDatabase() throws SQLException {
         try (var connection = connectDatabase()) {
         }
+    }
 
+    private static void initPing(ServletContextHandler context) {
         context.addServlet(new ServletHolder(new HttpServlet() {
             @Override
             protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -41,7 +49,9 @@ public class ServesTel {
                 resp.getWriter().print(OrdersTel.telPing(wayToRun));
             }
         }), "/tel/ping");
+    }
 
+    private static void initLive(ServletContextHandler context) {
         context.addServlet(new ServletHolder(new HttpServlet() {
             @Override
             protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
