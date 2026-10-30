@@ -109,7 +109,7 @@ public class Service {
         ServesGiz.init(this.context);
     }
 
-    private void servesTel() {
+    private void servesTel() throws Exception {
         log.info("Initializing Serves Tel...");
         ServesTel.init(this.context);
     }

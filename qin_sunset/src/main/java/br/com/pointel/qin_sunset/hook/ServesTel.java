@@ -1,6 +1,9 @@
 package br.com.pointel.qin_sunset.hook;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -14,9 +17,14 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class ServesTel {
 
+    private static final String DATABASE_URL = "jdbc:sqlite:serves_tel.sdb";
+
     private ServesTel() {}
 
-    public static void init(ServletContextHandler context) {
+    public static void init(ServletContextHandler context) throws SQLException {
+        try (var connection = connectDatabase()) {
+        }
+
         context.addServlet(new ServletHolder(new HttpServlet() {
             @Override
             protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,5 +41,9 @@ public class ServesTel {
                 resp.getWriter().print(OrdersTel.telPing(wayToRun));
             }
         }), "/tel/ping");
+    }
+
+    public static Connection connectDatabase() throws SQLException {
+        return DriverManager.getConnection(DATABASE_URL);
     }
 }
