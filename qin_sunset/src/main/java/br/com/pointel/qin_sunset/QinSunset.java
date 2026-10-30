@@ -83,6 +83,7 @@ public class QinSunset {
         result.addOption(Option.builder("b").longOpt("serves-bas").desc("Should we serve databases storage?").build());
         result.addOption(Option.builder("r").longOpt("serves-reg").desc("Should we serve register actions?").build());
         result.addOption(Option.builder("g").longOpt("serves-giz").desc("Should we serve GIZ scripts?").build());
+        result.addOption(Option.builder("t").longOpt("serves-tel").desc("Should we serve the Tel module?").build());
         return result;
     }
 
@@ -122,6 +123,9 @@ public class QinSunset {
         }
         if (command.hasOption('g')) {
             setup.servesGiz = true;
+        }
+        if (command.hasOption('t')) {
+            setup.servesTel = true;
         }
     }
 

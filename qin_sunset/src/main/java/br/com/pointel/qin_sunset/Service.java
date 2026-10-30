@@ -19,6 +19,7 @@ import br.com.pointel.qin_sunset.hook.ServesDir;
 import br.com.pointel.qin_sunset.hook.ServesGiz;
 import br.com.pointel.qin_sunset.hook.ServesPub;
 import br.com.pointel.qin_sunset.hook.ServesReg;
+import br.com.pointel.qin_sunset.hook.ServesTel;
 import br.com.pointel.qin_sunset.hook.ServesUtl;
 import br.com.pointel.qin_sunset.hook.ServesWay;
 
@@ -67,6 +68,7 @@ public class Service {
         this.servesBas();
         this.servesReg();
         this.servesGiz();
+        this.servesTel();
         this.servesUtl();
         this.servesWay();
     }
@@ -105,6 +107,11 @@ public class Service {
     private void servesGiz() {
         log.info("Initializing Serves Giz...");
         ServesGiz.init(this.context);
+    }
+
+    private void servesTel() {
+        log.info("Initializing Serves Tel...");
+        ServesTel.init(this.context);
     }
 
     private void servesUtl() {

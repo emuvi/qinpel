@@ -37,6 +37,8 @@ public class Setup implements Data {
     public Boolean servesReg;
     @FixBool(false)
     public Boolean servesGiz;
+    @FixBool(false)
+    public Boolean servesTel;
 
     @FixObject(value = "{}", type = Map.class)
     public Map<String, String> configMap;
