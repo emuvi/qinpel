@@ -1,0 +1,4 @@
+{
+    "cmake.autoDetectSourceDirectory": false,
+    "cmake.ignoreCMakeListsMissing": true
+}
